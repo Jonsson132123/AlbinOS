@@ -52,8 +52,8 @@ export const initialFileSystem: FileSystemNode = {
                                     type: 'file',
                                     content: 'Filip-Poon Kyckling wok med broccoli och cashewnötter\n\n500g kycklinglårfile, strimlad\n500g broccoli\n1 röd paprika\n4klyftor vitlök\n4cm färsk ingefära\n1 dl rostade cashewnötter\n65 g babyspenat\n3 msk japansk soja\n1 msk ostronsås\n1 msk sesamolja\n1 tsk strösocker\nrapsolja, till stekning',
                                 },
-                                'passwd.txt': {
-                                    name: 'passwd.txt',
+                                'kom-ihåg.txt': {
+                                    name: 'kom-ihåg.txt',
                                     type: 'file',
                                     content: 'ssh inlogg\nchewbacca@72.78.13.162\nKjellbackman123',
                                 },

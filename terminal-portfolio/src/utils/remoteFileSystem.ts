@@ -4,6 +4,28 @@ export const remoteFileSystem: FileSystemNode = {
     name: 'root',
     type: 'directory',
     children: {
+        'var': {
+            name: 'var',
+            type: 'directory',
+            children: {
+                'backups': {
+                    name: 'backups',
+                    type: 'directory',
+                    children: {
+                        'shadow.bak': {
+                            name: 'shadow.bak',
+                            type: 'file',
+                            content: 'root:$6$H4$123456'
+                        },
+                        'passwd.bak': {
+                            name: 'passwd.bak',
+                            type: 'file',
+                            content: 'root:x:0:0:root:/root:/bin/bash'
+                        }
+                    }
+                }
+            }
+        },
         'home': {
             name: 'home',
             type: 'directory',
