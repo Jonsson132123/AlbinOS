@@ -25,7 +25,7 @@ utöka filsystemet
 
 fortsätta på ctf
 
-lösa git och hosting
+lösa hosting
 
 
 
