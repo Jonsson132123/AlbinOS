@@ -14,6 +14,12 @@ Ctf:
     Kanske ha en hashad string av ett lösenord i en fil och sedan kan man använda hydra för att cracka det
     Gjort en början, passwd fil, rockyou fil.
 
+
+    v 0.2.5
+    Fixa hashcat.
+    Gör att man kan byta användare eller logga in med ssh som root
+    Fixa en mapp och fil som bara root kan läsa alltså vad som blir flaggan i ctf.
+
 Dir:
     gör directorys blåa 
     gjort
