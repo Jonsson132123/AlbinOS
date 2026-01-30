@@ -10,6 +10,8 @@ import bannerCommand from '../commands/banner';
 import { ssh } from '../commands/ssh';
 import exitCommand from '../commands/exit';
 import touchCommand from '../commands/touch';
+import nanoCommand from '../commands/nano';
+import johnCommand from '../commands/john';
 
 export const registerAllCommands = () => {
     commandRegistry.register(helpCommand);
@@ -23,5 +25,7 @@ export const registerAllCommands = () => {
     commandRegistry.register(ssh);
     commandRegistry.register(exitCommand);
     commandRegistry.register(touchCommand);
+    commandRegistry.register(nanoCommand);
+    commandRegistry.register(johnCommand);
     // Future commands will be added here
 };

@@ -15,7 +15,7 @@ export const initialFileSystem: FileSystemNode = {
                         'commands.txt': {
                             name: 'commands.txt',
                             type: 'file',
-                            content: 'Available Commands:\n\nhelp   - List available commands\nclear  - Clear the terminal output\nwhoami - Display user information\npwd    - Print working directory\nls     - List directory contents\ncd     - Change directory\ncat    - Concatenate files to standard output\nbanner - Display the banner\nssh    - Connect to a remote server\nexit   - Close the ssh session',
+                            content: 'Available Commands:\n\nhelp   - List available commands\nclear  - Clear the terminal output\nwhoami - Display user information\npwd    - Print working directory\nls     - List directory contents\ncd     - Change directory\ncat    - Concatenate files to standard output\nbanner - Display the banner\nssh    - Connect to a remote server\nexit   - Close the ssh session\ntouch  - Create an empty file\nnano   - Edit a file\njohn   - John the Ripper password cracker',
                         },
                     }
                 },
@@ -31,7 +31,7 @@ export const initialFileSystem: FileSystemNode = {
                         'rockyou.txt': {
                             name: 'rockyou.txt',
                             type: 'file',
-                            content: 'password123\nKjellbackman123\n123456\n123456789\n1234567890\n12345678901234567890',
+                            content: '123456\npassword\n12345678\nqwerty\n123456789\nfotboll123\niloveyou\n1234567\nsunshine\nprincess\nadmin\nwelcome\n666666\nabc123\ncharlie\ndonald\npassword1\nqwerty123\nhejsan123\nsommar2024\nstockholm\ngöteborg\nmalmö123\nkungen99\nviking2000\nfotboll\nhockey123\nsvansen\nbrunstigälg99\nälansen22\nblåbär456\nrödbulansen\nkotte123\nsnöflinga\nvinter2025\njuldansen\npepparkakor\nKjellbackman123\nsallad999\nmorot123\ngurka456',
                         },
                         'projects': {
                             name: 'projects',

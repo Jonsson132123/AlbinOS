@@ -15,7 +15,7 @@ export const remoteFileSystem: FileSystemNode = {
                         'shadow.bak': {
                             name: 'shadow.bak',
                             type: 'file',
-                            content: 'root:$6$H4$123456'
+                            content: 'root:8ebe0716326076a5bfc67b58b97087fa'
                         },
                         'passwd.bak': {
                             name: 'passwd.bak',
