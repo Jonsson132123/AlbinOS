@@ -9,6 +9,7 @@ import catCommand from '../commands/cat';
 import bannerCommand from '../commands/banner';
 import { ssh } from '../commands/ssh';
 import exitCommand from '../commands/exit';
+import touchCommand from '../commands/touch';
 
 export const registerAllCommands = () => {
     commandRegistry.register(helpCommand);
@@ -21,5 +22,6 @@ export const registerAllCommands = () => {
     commandRegistry.register(bannerCommand);
     commandRegistry.register(ssh);
     commandRegistry.register(exitCommand);
+    commandRegistry.register(touchCommand);
     // Future commands will be added here
 };
