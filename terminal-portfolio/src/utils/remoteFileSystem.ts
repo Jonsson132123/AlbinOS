@@ -30,8 +30,8 @@ export const remoteFileSystem: FileSystemNode = {
             name: 'home',
             type: 'directory',
             children: {
-                'chewbacca': {
-                    name: 'chewbacca',
+                'tyrell': {
+                    name: 'tyrell',
                     type: 'directory',
                     children: {
                         'secrets.txt': {

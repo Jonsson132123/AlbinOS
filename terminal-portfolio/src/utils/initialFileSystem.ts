@@ -55,7 +55,7 @@ export const initialFileSystem: FileSystemNode = {
                                 'kom-ihåg.txt': {
                                     name: 'kom-ihåg.txt',
                                     type: 'file',
-                                    content: 'ssh inlogg\nchewbacca@72.78.13.162\nKjellbackman123',
+                                    content: 'ssh inlogg\ntyrell@72.78.13.162\nKjellbackman123',
                                 },
                             }
                         }
