@@ -8,8 +8,8 @@ export const remoteFileSystem: FileSystemNode = {
             name: 'var',
             type: 'directory',
             children: {
-                'backups': {
-                    name: 'backups',
+                'ecorp_backups': {
+                    name: 'ecorp_backups',
                     type: 'directory',
                     children: {
                         'shadow.bak': {
