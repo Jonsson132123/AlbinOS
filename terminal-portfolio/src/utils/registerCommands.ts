@@ -12,6 +12,7 @@ import exitCommand from '../commands/exit';
 import touchCommand from '../commands/touch';
 import nanoCommand from '../commands/nano';
 import johnCommand from '../commands/john';
+import rmCommand from '../commands/rm';
 
 export const registerAllCommands = () => {
     commandRegistry.register(helpCommand);
@@ -27,5 +28,6 @@ export const registerAllCommands = () => {
     commandRegistry.register(touchCommand);
     commandRegistry.register(nanoCommand);
     commandRegistry.register(johnCommand);
+    commandRegistry.register(rmCommand);
     // Future commands will be added here
 };
