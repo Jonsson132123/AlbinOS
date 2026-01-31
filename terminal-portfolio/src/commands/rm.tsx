@@ -1,6 +1,49 @@
+import React, { useState, useEffect } from 'react';
 import type { Command } from '../types/Command';
 import { navigateToNode, resolvePath } from '../utils/fileSystemUtils';
 import type { FileSystemNode } from '../types/FileSystem';
+
+const BlueScreenOfDeath: React.FC = () => {
+    const [phase, setPhase] = useState<'freeze' | 'bsod'>('freeze');
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setPhase('bsod');
+        }, 3000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (phase === 'freeze') {
+        return <div className="text-zinc-500">Removing files...</div>;
+    }
+
+    return (
+        <div
+            style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                width: '100vw',
+                height: '100vh',
+                backgroundColor: '#0071ceff',
+                color: 'white',
+                fontFamily: 'Segoe UI, sans-serif',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                padding: '50px',
+                zIndex: 9999,
+            }}
+        >
+            <div style={{ fontSize: '120px', marginBottom: '20px' }}>:(</div>
+            <div style={{ marginTop: '40px', fontSize: '14px' }}>
+                Stop code: CRITICAL_PROCESS_DIED
+            </div>
+        </div>
+    );
+};
 
 const rmCommand: Command = {
     name: 'rm',
@@ -12,15 +55,24 @@ const rmCommand: Command = {
 
         // Parse flags
         let recursive = false;
+        let force = false;
         const paths: string[] = [];
 
         for (const arg of args) {
             if (arg === '-r' || arg === '-R' || arg === '--recursive') {
                 recursive = true;
+            } else if (arg === '-f' || arg === '-F' || arg === '--force') {
+                force = true;
+            } else if (arg === '-rf' || arg === '-rF' || arg === '-Rf' || arg === '-RF') {
+                recursive = true;
+                force = true;
             } else if (arg.startsWith('-')) {
                 // Check for combined flags like -rf
                 if (arg.includes('r') || arg.includes('R')) {
                     recursive = true;
+                }
+                if (arg.includes('f') || arg.includes('F')) {
+                    force = true;
                 }
             } else {
                 paths.push(arg);
@@ -29,6 +81,38 @@ const rmCommand: Command = {
 
         if (paths.length === 0) {
             return { action: 'print', content: 'rm: missing operand' };
+        }
+
+        // Check for root deletion attempt
+        const isRootDeletion = paths.some(p => p === '/' || p === '/*');
+
+        if (isRootDeletion) {
+            if (!recursive) {
+                return {
+                    action: 'print',
+                    content: 'rm: cannot remove \'/\': Is a directory'
+                };
+            }
+
+            if (recursive && !force) {
+                return {
+                    action: 'print',
+                    content: (
+                        <div>
+                            <div className="text-red-400">rm: it is dangerous to operate recursively on '/'</div>
+                            <div className="text-yellow-400">rm: use --force (-F) if you really want to delete all files on the system</div>
+                        </div>
+                    )
+                };
+            }
+
+            // rm -rF / - trigger BSOD
+            if (recursive && force) {
+                return {
+                    action: 'print',
+                    content: <BlueScreenOfDeath />
+                };
+            }
         }
 
         const errors: string[] = [];
