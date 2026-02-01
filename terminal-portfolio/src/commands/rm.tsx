@@ -26,7 +26,7 @@ const BlueScreenOfDeath: React.FC = () => {
                 left: 0,
                 width: '100vw',
                 height: '100vh',
-                backgroundColor: '#0071ceff',
+                backgroundColor: '#000000ff',
                 color: 'white',
                 fontFamily: 'Segoe UI, sans-serif',
                 display: 'flex',
@@ -39,7 +39,7 @@ const BlueScreenOfDeath: React.FC = () => {
         >
             <div style={{ fontSize: '120px', marginBottom: '20px' }}>:(</div>
             <div style={{ marginTop: '40px', fontSize: '14px' }}>
-                Stop code: CRITICAL_PROCESS_DIED
+                Stop code: KERNEL_PANIC
             </div>
         </div>
     );

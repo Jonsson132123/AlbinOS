@@ -33,6 +33,7 @@ export const remoteFileSystem: FileSystemNode = {
                 'root': {
                     name: 'root',
                     type: 'directory',
+                    requiredUser: 'root',
                     children: {
                         'flagga.txt': {
                             name: 'flagga.txt',

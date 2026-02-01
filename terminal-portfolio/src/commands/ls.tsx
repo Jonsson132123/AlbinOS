@@ -1,6 +1,5 @@
-
 import type { Command } from '../types/Command';
-import { navigateToNode, resolvePath } from '../utils/fileSystemUtils';
+import { navigateToNode, resolvePath, checkPathPermission } from '../utils/fileSystemUtils';
 import React from 'react';
 
 const lsCommand: Command = {
@@ -19,6 +18,11 @@ const lsCommand: Command = {
                 return { action: 'print', content: `ls: cannot access '${pathArgs[0]}': No such file or directory` };
             }
             targetPath = resolved;
+        }
+
+        const permission = checkPathPermission(context.fileSystem, targetPath, context.username);
+        if (!permission.allowed) {
+            return { action: 'print', content: `ls: cannot open directory '${pathArgs[0] || '.'}': Permission denied` };
         }
 
         const node = navigateToNode(context.fileSystem, targetPath);

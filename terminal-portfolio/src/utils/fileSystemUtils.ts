@@ -37,3 +37,20 @@ export const resolvePath = (currentPath: string[], targetPath: string): string[]
     }
     return newPath;
 };
+
+// Check if user has permission to access the path (checks all nodes along the path)
+export const checkPathPermission = (root: FileSystemNode, path: string[], username: string): { allowed: boolean; deniedAt?: string } => {
+    let currentNode = root;
+
+    for (const segment of path) {
+        if (!currentNode.children || !currentNode.children[segment]) {
+            return { allowed: true }; // Node doesn't exist, let other error handling deal with it
+        }
+        currentNode = currentNode.children[segment];
+
+        if (currentNode.requiredUser && currentNode.requiredUser !== username) {
+            return { allowed: false, deniedAt: segment };
+        }
+    }
+    return { allowed: true };
+};

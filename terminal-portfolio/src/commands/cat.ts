@@ -1,5 +1,5 @@
 import type { Command } from '../types/Command';
-import { navigateToNode, resolvePath } from '../utils/fileSystemUtils';
+import { navigateToNode, resolvePath, checkPathPermission } from '../utils/fileSystemUtils';
 
 const catCommand: Command = {
     name: 'cat',
@@ -14,6 +14,11 @@ const catCommand: Command = {
 
         if (!resolvedPath) {
             return { action: 'print', content: `cat: error resolving path` };
+        }
+
+        const permission = checkPathPermission(context.fileSystem, resolvedPath, context.username);
+        if (!permission.allowed) {
+            return { action: 'print', content: `cat: ${targetArg}: Permission denied` };
         }
 
         const targetNode = navigateToNode(context.fileSystem, resolvedPath);

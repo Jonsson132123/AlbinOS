@@ -1,5 +1,5 @@
 import type { Command } from '../types/Command';
-import { navigateToNode, resolvePath } from '../utils/fileSystemUtils';
+import { navigateToNode, resolvePath, checkPathPermission } from '../utils/fileSystemUtils';
 
 const cdCommand: Command = {
     name: 'cd',
@@ -16,6 +16,11 @@ const cdCommand: Command = {
 
         if (!resolvedPath) {
             return { action: 'print', content: `cd: error resolving path` };
+        }
+
+        const permission = checkPathPermission(context.fileSystem, resolvedPath, context.username);
+        if (!permission.allowed) {
+            return { action: 'print', content: `cd: ${targetArg}: Permission denied` };
         }
 
         const targetNode = navigateToNode(context.fileSystem, resolvedPath);

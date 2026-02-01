@@ -8,8 +8,6 @@ export interface CommandOutput {
 
 export interface TerminalContextType {
     currentPath: string[]; // e.g. ['home', 'guest']
-export interface TerminalContextType {
-    currentPath: string[]; // e.g. ['home', 'guest']
     fileSystem: FileSystemNode;
     setFileSystem: (newFs: FileSystemNode) => void;
     setCurrentPath: (path: string[]) => void;
