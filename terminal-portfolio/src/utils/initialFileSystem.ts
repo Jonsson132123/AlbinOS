@@ -8,14 +8,14 @@ export const initialFileSystem: FileSystemNode = {
             name: 'home',
             type: 'directory',
             children: {
-                'guest': {
-                    name: 'guest',
+                'root': {
+                    name: 'root',
                     type: 'directory',
                     children: {
                         'commands.txt': {
                             name: 'commands.txt',
                             type: 'file',
-                            content: 'Available Commands:\n\nhelp   - List available commands\nclear  - Clear the terminal output\nwhoami - Display user information\npwd    - Print working directory\nls     - List directory contents\n         Flags: -l (long format)\ncd     - Change directory\ncat    - Concatenate files to standard output\nbanner - Display the banner\nssh    - Connect to a remote server\nexit   - Close the ssh session\ntouch  - Create an empty file\nnano   - Edit a file\njohn   - John the Ripper password cracker\nrm     - Remove files or directories\n         Flags: -r (recursive), -f (force)\n',
+                            content: 'Available Commands:\n\nhelp   - List available commands\nclear  - Clear the terminal output\nwhoami - Display user information\npwd    - Print working directory\nls     - List directory contents\n         Flags: -l (long format)\ncd     - Change directory\ncat    - Concatenate files to standard output\nbanner - Display the banner\nssh    - Connect to a remote server\nexit   - Close the ssh session\ntouch  - Create an empty file\nnano   - Edit a file\njohn   - John the Ripper password cracker\nrm     - Remove files or directories\n         Flags: -r (recursive), -f (force)\nsu     - Switch user\n',
                         },
                     }
                 },

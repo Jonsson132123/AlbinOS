@@ -15,25 +15,33 @@ export const ssh: Command = {
         // Simulating delay?
         // await new Promise(resolve => setTimeout(resolve, 500)); 
 
+        const validLogins: { [key: string]: { password: string; homePath: string[] } } = {
+            'tyrell@72.78.13.162': { password: 'Kjellbackman123', homePath: ['home', 'tyrell'] },
+            'root@72.78.13.162': { password: 'brunstigälg99', homePath: ['home', 'root'] },
+        };
+
         const checkPassword = async (input: string): Promise<CommandOutput> => {
-            if (target === 'tyrell@72.78.13.162' && input === 'Kjellbackman123') {
-                context.setUsername('tyrell');
+            const loginInfo = validLogins[target];
+
+            if (loginInfo && input === loginInfo.password) {
+                const username = target.split('@')[0];
+                context.setUsername(username);
                 context.setHostname('72.78.13.162');
                 context.setFileSystem(remoteFileSystem);
-                context.setCurrentPath(['home', 'tyrell']);
+                context.setCurrentPath(loginInfo.homePath);
                 context.unregisterInputHandler();
 
                 return {
                     action: 'print',
                     content: (
                         <div>
-                            <div>Welcome to Ubuntu 20.04.6 LTS(GNU/ Linux 5.4.0 - 150 - generic x86_64)</div>
-                            < br />
+                            <div>Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.4.0-150-generic x86_64)</div>
+                            <br />
                             <div> * Documentation: https://help.ubuntu.com</div>
                             <div> * Management: https://landscape.canonical.com</div>
                             <div> * Support: https://ubuntu.com/advantage</div>
                             <br />
-                            < div > Last login: Tue Jan 20 17: 30:00 2026 from 192.168.1.5 </div>
+                            <div>Last login: Tue Jan 20 17:30:00 2026 from 192.168.1.5</div>
                         </div>
                     )
                 };

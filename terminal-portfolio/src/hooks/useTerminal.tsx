@@ -21,7 +21,7 @@ import { banner } from '../utils/banner';
 export const useTerminal = () => {
     // Determine initial path based on user
     const getInitialPath = () => {
-        return ['home', 'guest'];
+        return ['home', 'root'];
     };
 
     const initialBannerItem: HistoryItem = {
