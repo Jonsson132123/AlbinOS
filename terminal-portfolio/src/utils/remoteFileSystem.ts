@@ -30,23 +30,29 @@ export const remoteFileSystem: FileSystemNode = {
             name: 'home',
             type: 'directory',
             children: {
+                'root': {
+                    name: 'root',
+                    type: 'directory',
+                    children: {
+                        'flagga.txt': {
+                            name: 'flagga.txt',
+                            type: 'file',
+                            content: '1337 ELITE HACKER'
+                        }
+                    }
+                },
                 'tyrell': {
                     name: 'tyrell',
                     type: 'directory',
                     children: {
-                        'secrets.txt': {
-                            name: 'secrets.txt',
+                        'todo.txt': {
+                            name: 'todo.txt',
                             type: 'file',
-                            content: ''
-                        },
-                        'admin_notes.txt': {
-                            name: 'admin_notes.txt',
-                            type: 'file',
-                            content: 'TODO: Byt lösenord på alla servrar. "123456" är inte säkert.',
+                            content: 'Become CTO of this company.'
                         }
                     }
                 }
             }
-        }
+        },
     }
 };
