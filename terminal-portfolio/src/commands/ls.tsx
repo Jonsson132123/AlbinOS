@@ -1,14 +1,46 @@
 import type { Command } from '../types/Command';
+import type { FileSystemNode } from '../types/FileSystem';
 import { navigateToNode, resolvePath, checkPathPermission } from '../utils/fileSystemUtils';
 import React from 'react';
+
+// Rekursiv funktion för att lista alla filer och mappar
+const listRecursive = (node: FileSystemNode, path: string, indent: number = 0): React.ReactNode[] => {
+    const results: React.ReactNode[] = [];
+
+    if (node.children) {
+        const childrenKeys = Object.keys(node.children).sort();
+
+        for (const key of childrenKeys) {
+            const child = node.children[key];
+            const isDir = child.type === 'directory';
+            const currentPath = path ? `${path}/${key}` : key;
+
+            results.push(
+                <div key={currentPath} style={{ marginLeft: `${indent * 1.5}rem` }}>
+                    <span className={isDir ? 'text-blue-400 font-bold' : 'text-zinc-300'}>
+                        {key}
+                    </span>
+                </div>
+            );
+
+            // Rekursivt lista undermappar
+            if (isDir && child.children) {
+                results.push(...listRecursive(child, currentPath, indent + 1));
+            }
+        }
+    }
+
+    return results;
+};
 
 const lsCommand: Command = {
     name: 'ls',
     description: 'List directory contents',
     execute: (args, context) => {
-        // Check for -l flag
+        // Check for flags (case-insensitive för -r)
         const longFormat = args.includes('-l');
-        const pathArgs = args.filter(arg => arg !== '-l');
+        const recursive = args.some(arg => arg.toLowerCase() === '-r');
+        const pathArgs = args.filter(arg => arg !== '-l' && arg.toLowerCase() !== '-r');
 
         let targetPath = context.currentPath;
 
@@ -37,6 +69,18 @@ const lsCommand: Command = {
 
         if (node.children) {
             const childrenKeys = Object.keys(node.children);
+
+            // Rekursiv listning
+            if (recursive) {
+                const recursiveContent = listRecursive(node, '');
+                if (recursiveContent.length === 0) {
+                    return { action: 'print', content: '' };
+                }
+                return {
+                    action: 'print',
+                    content: <div className="flex flex-col">{recursiveContent}</div>
+                };
+            }
 
             if (longFormat) {
                 // Long format listing
