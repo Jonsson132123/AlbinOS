@@ -58,6 +58,11 @@ export const initialFileSystem: FileSystemNode = {
                             type: 'directory',
                             children: {}
                         },
+                        'skills': {
+                            name: 'skills',
+                            type: 'directory',
+                            children: {}
+                        },
                         'john': {
                             name: 'john',
                             type: 'directory',
@@ -73,11 +78,6 @@ export const initialFileSystem: FileSystemNode = {
                                     content: '123456\npassword\n12345678\nqwerty\n123456789\n12345\n1234567890\n1234567\nabc123\npassword1\n111111\n123123\nadmin\nletmein\nwelcome\nmonkey\ndragon\nmaster\nsunshine\nprincess\nqwertyuiop\n1q2w3e4r\n654321\nsuperman\n1qaz2wsx\n7777777\nfuckyou\nletmein1\n000000\nzxcvbnm\nqwerty1\niloveyou\ntrustno1\ncharlie\nshadow\nashley\nfootball\njesus\nmichael\nninjaaa\nmustang\npassword123\naccess\nmaster1\nflower\nhotdog\nloveme\nwhatever\ndonald\npassword2\nguest\ndragon1\nmonkey1\nstarwars\ncomputer\nhello123\nfreedom\nwhatever1\nqazwsx\ntrustno1\nranger\njordan\nmaster123\nfotboll123\nhejsan123\nsommar2024\nstockholm\ngöteborg\nmalmö123\nkungen99\nviking2000\nfotboll\nhockey123\nsvansen\nälansen22\nblåbär456\nrödbulansen\nkotte123\nsnöflinga\nvinter2025\njuldansen\npepparkakor\nKjellbackman123\nsallad999\nmorot123\ngurka456\nkanelbulle\nfika2024\ndalahäst\nsmörgåstårta\nsurströmming\nlingon123\nmidsommar\nlucia2024\nskärgård\nsemla123\nköttbulle\nnobel123\nvolvo240\nsaab900\nikea2024\nabba1974\nzlatan10\nbjörnborgaren\nastriden99\npippi123\nkarlsson99\nsvenson\nlindgren\nandersson\njohansson\neriksson\nlars123\nanna2024\nolof99\ningrid\ngreta2024\ncarl16\ngustav\nvictoria\nmadeleine\nsilvia123\nostermalmstorg\ngamlastan\ndjurgården\nvasastan\nsodermalm\nuppsala\nlinkoping\nmalmo2024\nhelsingborg\njönköping\norebro123\nvasteras\nkiruna99\nvisby123\nkalmar\nkarlstad\nlulea2024\numea123\nsundsvall\ngavle99\neskilstuna\nvaxjo123\nhalmstad\nborås99\nkristianstad\nuddevalla\ntrollhattan\nfalun123\nlidkoping\nostersund\nnyköping99\nskovde\nvarberg\ntrelleborg\nkarlskrona\nystad123\nchangjävel99\nfanskap\nhelvete123\njävlabajs\nskitbra99\nfittajävel\nkuksugen\narsle123\nbabian99\nblatte\nbögävel\nsnorungar\nflundra99\nfjanteri\nglin123\ngoliat99\nhoran\nidiot123\njycke99\nkioskmongo\nluffare\nmongo123\nnolla99\nordvits\npucko123\nrövhatt99\nskitunge\ntorsk123\ntoker99\nuffes\nvildhjärna\nwallraff\nxerxes123\nyxskaft99\nzigenare\naborre123\nbraxen99\ngädda\ngös123\nlax99\nöring\nsik123\nmört99\nkarp\nhummer123\nkrabba99\nräka\nmusla123\nostron99\nblåmussla\nhavskräfta\npilgrimsmussla99\nsjötunga123\nstenbitsrom99\nkaviar\nlöjrom123\ntobis99\nskarpsill\nansjovis123\nströmming99\nbockling\nsurströmming123\ngravadlax99\nrimmadlax\nvarmrökt123\nkallrökt99\ngrillad\nstekt123\nkokt99\nångad\nugn123\nmikro99\nfryst\nfärsk123\nekologisk99\nnärodlad\nimporterad123\nhemgjord99\nhandgjord\nfabrikstillverkad123\nindustriell99\nmaskinell\nmanuell123\nautomatisk99\ndigital\nanalog123\ntrådlös99\ntrådad\nkabellös123\nfiber99\nadsl\n4G123\n5G99\nwifi\nbluetooth123\nnfc99\nusbc\nlightning123\nthunderbolt99\nhdmi\nvga123\ndvi99\ndisplayport\nscart123\nkomposit99\nkomponent\noptisk123\nkoaxial99\nbalanserad\nobalanserad123\nmono99\nstereo\nsurround123\natmos99\ndtsx\nauro3d123\nimax99\ndolby\nthx123\ndts99\nmpeg\naac123\nflac99\nalac\nape123\nwav99\nmp3\nogg123\nopus99\nvorbis\nwma123\naiff99\nau\nsnd123\npcm99\nadpcm\natrac123\nminidisc99\ndat\ndcc123\nelcassette99\nvhs\nbeta123\nlaserdisc99\nvcd\nsvcd123\ndvd99\nbluray\nhddvd123\numd99\n4k\n8k123\nhdr99\ndolbyvision\nhdr10123\nbrunstigälg99\nhlg99\npq\nsdr123\nrec709\nrec2020123\ndcip3\nadobergb99',
                                 },
                             }
-                        },
-                        'skills': {
-                            name: 'skills',
-                            type: 'directory',
-                            children: {}
                         },
                         'hemligt': {
                             name: 'hemligt',

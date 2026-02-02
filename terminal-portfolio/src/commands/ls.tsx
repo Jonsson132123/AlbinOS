@@ -4,7 +4,7 @@ import { navigateToNode, resolvePath, checkPathPermission } from '../utils/fileS
 import React from 'react';
 
 // Rekursiv funktion för att lista alla filer och mappar
-const listRecursive = (node: FileSystemNode, path: string, indent: number = 0): React.ReactNode[] => {
+const listRecursive = (node: FileSystemNode, path: string, username: string, indent: number = 0): React.ReactNode[] => {
     const results: React.ReactNode[] = [];
 
     if (node.children) {
@@ -14,6 +14,22 @@ const listRecursive = (node: FileSystemNode, path: string, indent: number = 0): 
             const child = node.children[key];
             const isDir = child.type === 'directory';
             const currentPath = path ? `${path}/${key}` : key;
+
+            // Kolla behörighet för denna nod
+            const hasPermission = !child.requiredUser || child.requiredUser === username;
+
+            if (!hasPermission) {
+                // Visa permission denied för denna mapp
+                results.push(
+                    <div key={currentPath} style={{ marginLeft: `${indent * 1.5}rem` }}>
+                        <span className="text-red-400">
+                            {key}: Permission denied
+                        </span>
+                    </div>
+                );
+                // Fortsätt till nästa utan att lista innehållet
+                continue;
+            }
 
             results.push(
                 <div key={currentPath} style={{ marginLeft: `${indent * 1.5}rem` }}>
@@ -25,7 +41,7 @@ const listRecursive = (node: FileSystemNode, path: string, indent: number = 0): 
 
             // Rekursivt lista undermappar
             if (isDir && child.children) {
-                results.push(...listRecursive(child, currentPath, indent + 1));
+                results.push(...listRecursive(child, currentPath, username, indent + 1));
             }
         }
     }
@@ -72,7 +88,7 @@ const lsCommand: Command = {
 
             // Rekursiv listning
             if (recursive) {
-                const recursiveContent = listRecursive(node, '');
+                const recursiveContent = listRecursive(node, '', context.username);
                 if (recursiveContent.length === 0) {
                     return { action: 'print', content: '' };
                 }
