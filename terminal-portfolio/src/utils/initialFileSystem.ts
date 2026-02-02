@@ -4,6 +4,26 @@ export const initialFileSystem: FileSystemNode = {
     name: 'root',
     type: 'directory',
     children: {
+        'bin': {
+            name: 'bin',
+            type: 'directory',
+            children: {},
+        },
+        'boot': {
+            name: 'boot',
+            type: 'directory',
+            children: {},
+        },
+        'dev': {
+            name: 'dev',
+            type: 'directory',
+            children: {},
+        },
+        'etc': {
+            name: 'etc',
+            type: 'directory',
+            children: {},
+        },
         'home': {
             name: 'home',
             type: 'directory',
@@ -78,6 +98,52 @@ export const initialFileSystem: FileSystemNode = {
                     }
                 }
             }
-        }
+        },
+        'lib': {
+            name: 'lib',
+            type: 'directory',
+            children: {},
+        },
+        'media': {
+            name: 'media',
+            type: 'directory',
+            children: {},
+        },
+        'mnt': {
+            name: 'mnt',
+            type: 'directory',
+            children: {},
+        },
+        'opt': {
+            name: 'opt',
+            type: 'directory',
+            children: {},
+        },
+        'sbin': {
+            name: 'sbin',
+            type: 'directory',
+            children: {},
+        },
+        'srv': {
+            name: 'srv',
+            type: 'directory',
+            children: {},
+        },
+        'tmp': {
+            name: 'tmp',
+            type: 'directory',
+            children: {},
+        },
+        'usr': {
+            name: 'usr',
+            type: 'directory',
+            children: {},
+        },
+        'var': {
+            name: 'var',
+            type: 'directory',
+            children: {},
+        },
     }
 };
+
