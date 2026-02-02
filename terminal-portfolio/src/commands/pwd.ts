@@ -3,7 +3,7 @@ import type { Command } from '../types/Command';
 const pwdCommand: Command = {
     name: 'pwd',
     description: 'Print working directory',
-    execute: (args, context) => {
+    execute: (_args, context) => {
         const pathStr = '/' + context.currentPath.join('/');
         return {
             action: 'print',

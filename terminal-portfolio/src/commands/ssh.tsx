@@ -1,6 +1,5 @@
 import type { Command, CommandOutput, TerminalContextType } from '../types/Command';
 import { remoteFileSystem } from '../utils/remoteFileSystem';
-import React from 'react';
 
 export const ssh: Command = {
     name: 'ssh',

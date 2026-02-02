@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Command, CommandOutput, TerminalContextType } from '../types/Command';
 import type { FileSystemNode } from '../types/FileSystem';
 import { navigateToNode, resolvePath } from '../utils/fileSystemUtils';

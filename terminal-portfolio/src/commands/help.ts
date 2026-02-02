@@ -1,5 +1,4 @@
 import type { Command } from '../types/Command';
-import { commandRegistry } from '../utils/commandRegistry';
 
 const helpCommand: Command = {
     name: 'help',

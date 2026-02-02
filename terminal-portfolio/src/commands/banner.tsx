@@ -1,6 +1,5 @@
 import type { Command } from '../types/Command';
 import { banner } from '../utils/banner';
-import React from 'react';
 
 const bannerCommand: Command = {
     name: 'banner',

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { initialFileSystem } from '../utils/initialFileSystem';
 import { commandRegistry } from '../utils/commandRegistry';
 import type { FileSystemNode } from '../types/FileSystem';
