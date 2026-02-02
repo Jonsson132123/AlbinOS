@@ -29,12 +29,6 @@ göra:
 
 utöka filsystemet 
 
-fortsätta på ctf:
-Gör att man kan byta användare eller logga in med ssh som root
-Fixa en mapp och fil som bara root kan läsa alltså vad som blir flaggan i ctf.
-fixa så att john tar längre tid på sig att cracka lösenordet.                               KLART
-lägg till rm kommando som tar bort filer och mappar.                                        KLART   
-Lägg till en john mapp och skapa en instruktions fil och lägg rockyou filen där i.          KLART
 
 
 

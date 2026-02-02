@@ -18,7 +18,7 @@ const exitCommand: Command = {
         context.setUsername(config.username);
         context.setHostname(config.hostname);
         context.setFileSystem(initialFileSystem);
-        context.setCurrentPath(['home', 'guest']);
+        context.setCurrentPath(['home', 'root']);
 
         return {
             action: 'print',
