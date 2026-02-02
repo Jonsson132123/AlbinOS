@@ -12,6 +12,11 @@ export const initialFileSystem: FileSystemNode = {
                     name: 'root',
                     type: 'directory',
                     children: {
+                        'welcome.txt': {
+                            name: 'welcome.txt',
+                            type: 'file',
+                            content: 'Välkommen till min emulerade bash miljö!\n\nSkriv "help" för att få en lista över bas kommandon.\nEn lista över alla kommandon finns i "commands.txt" som ligger i /home/root.\n\nMer om mig finns i min hemkatalog /home/albin.\n\n=== CTF Utmaning ===\nDet finns en flagga nånstans i något system.\nKan du hitta den?',
+                        },
                         'commands.txt': {
                             name: 'commands.txt',
                             type: 'file',
