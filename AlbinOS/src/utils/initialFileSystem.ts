@@ -48,10 +48,10 @@ export const initialFileSystem: FileSystemNode = {
                     name: 'albin',
                     type: 'directory',
                     children: {
-                        'about.txt': {
-                            name: 'about.txt',
+                        'about_me.txt': {
+                            name: 'about_me.txt',
                             type: 'file',
-                            content: 'Namn: Albin\nÅlder: 22',
+                            content: 'Hej Albin heter jag.\n\nJag är en IT-säkerhetsstudent som brinner lite extra för den offensiva sidan, det var så IT-säksintresset började.\nVår Windows XP dator var ingen match mot mig med metasploit. Målet? Hamna inom red teaming.\n\nUtanför plugget spenderar jag mest tid på att programmera roliga projekt och labba i hemmamiljö.\nEn del av dem finns i /home/albin/projects/.\n\nUtforska gärna systemet, finns en del easter eggs.',
                         },
                         'projects': {
                             name: 'projects',
