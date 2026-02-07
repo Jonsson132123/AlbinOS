@@ -70,7 +70,7 @@ const lsCommand: Command = {
 
         const permission = checkPathPermission(context.fileSystem, targetPath, context.username);
         if (!permission.allowed) {
-            return { action: 'print', content: `ls: cannot open directory '${pathArgs[0] || '.'}': Permission denied` };
+            return { action: 'print', content: <span className="text-red-400">ls: cannot open directory '{pathArgs[0] || '.'}': Permission denied</span> };
         }
 
         const node = navigateToNode(context.fileSystem, targetPath);

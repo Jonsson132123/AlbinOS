@@ -18,7 +18,7 @@ const catCommand: Command = {
 
         const permission = checkPathPermission(context.fileSystem, resolvedPath, context.username);
         if (!permission.allowed) {
-            return { action: 'print', content: `cat: ${targetArg}: Permission denied` };
+            return { action: 'print', content: <span className="text-red-400">cat: {targetArg}: Permission denied</span> };
         }
 
         const targetNode = navigateToNode(context.fileSystem, resolvedPath);

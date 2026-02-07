@@ -46,7 +46,7 @@ export const ssh: Command = {
                 };
             } else {
                 context.unregisterInputHandler();
-                return { action: 'print', content: 'Permission denied, please try again.' };
+                return { action: 'print', content: <span className="text-red-400">Permission denied, please try again.</span> };
             }
         };
 
