@@ -42,6 +42,47 @@ export const initialFileSystem: FileSystemNode = {
                             type: 'file',
                             content: 'Available Commands:\n\nhelp   - List available commands\nclear  - Clear the terminal output\nwhoami - Display user information\npwd    - Print working directory\nls     - List directory contents\n         Flags: -l (long format),  -R (recursive)\ncd     - Change directory\ncat    - Concatenate files to standard output\nbanner - Display the banner\nssh    - Connect to a remote server\nexit   - Close the ssh session\ntouch  - Create an empty file\nnano   - Edit a file\njohn   - John the Ripper password cracker\nrm     - Remove files or directories\n         Flags: -r (recursive),  -F (force)\nsu     - Switch user\n',
                         },
+                        'CTF_Guide': {
+                            name: 'CTF_Guide',
+                            type: 'directory',
+                            children: {
+                                'README.md': {
+                                    name: 'README.md',
+                                    type: 'file',
+                                    content: '# CTF Guide\n===SPOILERS===\nAnvänd guiden om du kör fast.',
+                                },
+                                'steg_1.txt': {
+                                    name: 'steg_1.txt',
+                                    type: 'file',
+                                    content: '#Steg 1: Reconnaissance\n\n#Utforska filsystemet och hitta inloggningsuppgifter.\n\ncd /home/albin/hemligt\ncat kom-ihåg.txt',
+                                },
+                                'steg_2.txt': {
+                                    name: 'steg_2.txt',
+                                    type: 'file',
+                                    content: '#Steg 2: Initial Access\n\n#Använd SSH-uppgifterna för att ansluta till systemet.\n\nssh tyrell@72.78.13.162',
+                                },
+                                'steg_3.txt': {
+                                    name: 'steg_3.txt',
+                                    type: 'file',
+                                    content: '#Steg 3: Privilege Escalation - Find the hash \n\n#Leta efter känsliga backup-filer på systemet.\n\nls -r /\ncd /var/ecorp_backups\ncat shadow.bak\n#Kopiera hashen\nctrl + c root:8ebe0716326076a5bfc67b58b97087fa',
+                                },
+                                'steg_4.txt': {
+                                    name: 'steg_4.txt',
+                                    type: 'file',
+                                    content: '#Steg 4: Privilege Escalation - Prepare\n\n#Gå ur ssh sessionen och gå till john mappen.\n\nexit\ncd /home/albin/john\n\n#Skapa en hashfil med nano\n\nnano hash.txt\n\n#Klistra in hashen\nctrl + v root:8ebe0716326076a5bfc67b58b97087fa\n#Klicka enter och skriv :wq för att spara\n:wq + enter\n\n#För att se att filen är där\nls\n#För att se att filen innehåller hashen\ncat hash.txt'
+                                },
+                                'steg_5.txt': {
+                                    name: 'steg_5.txt',
+                                    type: 'file',
+                                    content: '#Steg 5: Privilege Escalation - Crack the Pass\n\n#Använd John the ripper med wordlisten rockyou.txt.\n#Se till att vara i /home/albin/john\n\ncd /home/albin/john\njohn --wordlist=rockyou.txt hash.txt ',
+                                },
+                                'steg_6.txt': {
+                                    name: 'steg_6.txt',
+                                    type: 'file',
+                                    content: '#Steg 6: Privilege Escalation - Root access\n\n#Logga in som root i systemet\n\nssh root@72.78.13.162\n\nFlaggan ligger i /home/root/',
+                                },
+                            }
+                        }
                     }
                 },
                 'albin': {

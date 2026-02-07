@@ -6,5 +6,5 @@ export const banner = `
   \\/_/\\/_/   \\/_____/   \\/_____/   \\/_/   \\/_/ \\/_/   \\/_____/   \\/_____/ 
                                                                           
 
-       Welcome to AlbinOS v1.0.2
+       Welcome to AlbinOS v1.0.6
 `;
