@@ -12,7 +12,9 @@ function App() {
                     <BootSequence onComplete={() => setIsBooting(false)} />
                 </div>
             ) : (
-                <Terminal />
+                <div className="h-screen w-full">
+                    <Terminal />
+                </div>
             )}
         </div>
     )

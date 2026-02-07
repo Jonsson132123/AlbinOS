@@ -14,8 +14,6 @@ pwd        - Print working directory
 cat        - Concatenate files to standard output
 ls         - List directory contents
 cd         - Change directory
-
-
         `;
         return {
             action: 'print',

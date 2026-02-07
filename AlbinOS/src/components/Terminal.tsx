@@ -38,7 +38,7 @@ const Terminal: React.FC = () => {
 
     return (
         <div
-            className="w-full h-full p-4 overflow-y-auto font-mono text-sm md:text-base leading-relaxed"
+            className="w-full h-full min-h-full p-4 overflow-y-auto font-mono text-sm md:text-base leading-relaxed"
             onClick={handleContainerClick}
         >
             {/* History */}
