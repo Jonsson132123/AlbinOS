@@ -5,17 +5,26 @@ interface BootSequenceProps {
 }
 
 const bootLines = [
-    "Initialising AlbinOS kernel...",
-    "Loading typical-portfolio-modules...",
-    "Mounting virtual file systems...",
-    "Starting network configuration...",
-    "Applying CSS variables to global scope...",
-    "Starting React reconciliation process...",
-    "Loading 'whoami' user profile...",
-    "Mounting /home/albin...",
-    "Checking projects integrity...",
-    "Starting interactive terminal session...",
-    "Reached target Graphical Interface."
+    "AlbinOS 0.9.2 (tty1)",
+    "Loading kernel 6.12.0-albinos ...",
+    "Loading initial ramdisk ...",
+    "Started Journal Service.",
+    "Started udev Kernel Device Manager.",
+    "Activated swap /dev/sda2.",
+    "Mounted FUSE Control File System.",
+    "Mounting Temporary Directory /tmp...",
+    "Reached target Local File Systems.",
+    "Started Network Manager.",
+    "Reached target Network.",
+    "Started OpenSSH Daemon.",
+    "Started CUPS Scheduler.",
+    "Started User Login Management.",
+    "Started NSO_Spyware.",
+    "Mounted /home/albin.",
+    "Started Getty on tty1.",
+    "Reached target Multi-User System.",
+    "Reached target Graphical Interface.",
+    "Starting interactive shell session..."
 ];
 
 const BootSequence: React.FC<BootSequenceProps> = ({ onComplete }) => {
@@ -34,7 +43,7 @@ const BootSequence: React.FC<BootSequenceProps> = ({ onComplete }) => {
 
             setLines(prev => [...prev, bootLines[currentIndex]]);
             currentIndex++;
-        }, 300); // Adjust speed here (300ms * 11 lines approx 3.3s + overhead)
+        }, 125); // Adjust speed here (300ms * 11 lines approx 3.3s + overhead)
 
         return () => clearInterval(interval);
     }, [onComplete]);

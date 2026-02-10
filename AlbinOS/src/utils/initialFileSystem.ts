@@ -49,7 +49,7 @@ export const initialFileSystem: FileSystemNode = {
                                 'README.md': {
                                     name: 'README.md',
                                     type: 'file',
-                                    content: '# CTF Guide\n===SPOILERS===\nAnvänd guiden om du kör fast.',
+                                    content: '# CTF Guide\n===SPOILERS===\nAnvänd den här guiden om du kör fast.',
                                 },
                                 'steg_1.txt': {
                                     name: 'steg_1.txt',
@@ -92,7 +92,7 @@ export const initialFileSystem: FileSystemNode = {
                         'about_me.txt': {
                             name: 'about_me.txt',
                             type: 'file',
-                            content: 'Hej Albin heter jag.\n\nJag är en IT-säkerhetsstudent som brinner lite extra för den offensiva sidan, det var så IT-säksintresset började.\nVår Windows XP dator var ingen match mot mig med metasploit. Mitt mål är att hamna inom red teaming.\n\nUtanför plugget spenderar jag mest tid på att programmera roliga projekt och labba i hemmamiljö.\nEn del av dem finns i /home/albin/projects/.\n\nUtforska gärna systemet, finns en del easter eggs.',
+                            content: 'Hej Albin heter jag.\n\nJag är en IT-säkerhetsstudent som brinner lite extra för den offensiva sidan, det var så IT-säksintresset började.\nVår Windows-XP dator var ingen match mot mig med Metasploit. Är väldigt tekniskt intresserad och mitt mål är att hamna inom red teaming.\n\nUtanför plugget spenderar jag mest tid på att programmera roliga projekt och labba i hemmamiljö.\nEn del av dem finns i /home/albin/projects/.\n\nUtforska gärna systemet, finns en del easter eggs.',
                         },
                         'projects': {
                             name: 'projects',
