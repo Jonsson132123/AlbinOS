@@ -43,7 +43,7 @@ const BootSequence: React.FC<BootSequenceProps> = ({ onComplete }) => {
 
             setLines(prev => [...prev, bootLines[currentIndex]]);
             currentIndex++;
-        }, 125); // Adjust speed here (300ms * 11 lines approx 3.3s + overhead)
+        }, 115); // Adjust speed here (300ms * 11 lines approx 3.3s + overhead)
 
         return () => clearInterval(interval);
     }, [onComplete]);
