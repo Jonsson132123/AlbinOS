@@ -1,4 +1,5 @@
 import type { FileSystemNode } from '../types/FileSystem';
+import { megaMapperCode } from '../content/megamapper';
 
 export const initialFileSystem: FileSystemNode = {
     name: 'root',
@@ -97,7 +98,34 @@ export const initialFileSystem: FileSystemNode = {
                         'projects': {
                             name: 'projects',
                             type: 'directory',
-                            children: {}
+                            children: {
+                                'MegaMapper': {
+                                    name: 'MegaMapper',
+                                    type: 'directory',
+                                    children: {
+                                        'README.md': {
+                                            name: 'README.md',
+                                            type: 'file',
+                                            content: `
+MegaMapper är ett verktyg som skannar nätverk efter hosts, portar och tar fram 
+information om tjänster som körs.
+
+Programmet är python. Det använder modulen scapy för att skicka arp requests för
+att få fram hosts, använder socket anslutning för att ta fram vilka portar som är 
+aktiva och vad för tjänster som körs.
+
+Det är skrivet av mig 2026-03-01
+Länk till projektet: https://github.com/Jonsson132123/MegaMapper
+`,
+                                        },
+                                        'MegaMapper.code': {
+                                            name: 'MegaMapper.code',
+                                            type: 'file',
+                                            content: megaMapperCode,
+                                        },
+                                    }
+                                }
+                            }
                         },
                         'skills': {
                             name: 'skills',
