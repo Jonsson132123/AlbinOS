@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Command } from '../types/Command';
 import { navigateToNode, resolvePath, checkPathPermission } from '../utils/fileSystemUtils';
 

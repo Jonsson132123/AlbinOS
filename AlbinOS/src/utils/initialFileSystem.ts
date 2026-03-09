@@ -1,5 +1,4 @@
 import type { FileSystemNode } from '../types/FileSystem';
-import { megaMapperCode } from '../content/megamapper';
 
 export const initialFileSystem: FileSystemNode = {
     name: 'root',
