@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Command } from '../types/Command';
 import { navigateToNode, resolvePath, checkPathPermission } from '../utils/fileSystemUtils';
 
@@ -31,7 +32,24 @@ const catCommand: Command = {
             return { action: 'print', content: `cat: ${targetArg}: Is a directory` };
         }
 
-        return { action: 'print', content: targetNode.content || '' };
+        const raw = targetNode.content || '';
+        const urlRegex = /(https?:\/\/[^\s]+)/g;
+        if (!urlRegex.test(raw)) {
+            return { action: 'print', content: raw };
+        }
+
+        const parts = raw.split(/(https?:\/\/[^\s]+)/g);
+        const rendered = (
+            <>
+                {parts.map((part, i) =>
+                    /^https?:\/\//.test(part)
+                        ? <a key={i} href={part} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline hover:text-blue-300">{part}</a>
+                        : part
+                )}
+            </>
+        );
+
+        return { action: 'print', content: rendered };
     }
 };
 

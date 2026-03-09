@@ -107,30 +107,54 @@ export const initialFileSystem: FileSystemNode = {
                                             name: 'README.md',
                                             type: 'file',
                                             content: `
-MegaMapper är ett verktyg som skannar nätverk efter hosts, portar och tar fram 
-information om tjänster som körs.
+MegaMapper är ett nätverksskanningsverktyg inspirerat av Nmap. Det kan hitta aktiva hosts på ett subnät, skanna
+portar och identifiera vilka tjänster som körs.
 
-Programmet är python. Det använder modulen scapy för att skicka arp requests för
-att få fram hosts, använder socket anslutning för att ta fram vilka portar som är 
-aktiva och vad för tjänster som körs.
+Programmet är skrivet i Python och använder Scapy för att skicka ARP-requests för host discovery, och sockets för
+att identifiera öppna portar och tjänster. Finns att se via länken till min github.
 
-Det är skrivet av mig 2026-03-01
-Länk till projektet: https://github.com/Jonsson132123/MegaMapper
+Byggt av mig i mars 2026 — https://github.com/Jonsson132123/MegaMapper
+
 `,
                                         },
-                                        'MegaMapper.code': {
-                                            name: 'MegaMapper.code',
+                                        'MegaMapper.py': {
+                                            name: 'MegaMapper.py',
                                             type: 'file',
-                                            content: megaMapperCode,
+                                            content: 'https://github.com/Jonsson132123/MegaMapper',
+                                        },
+                                    }
+                                },
+                                'Meganet-C2': {
+                                    name: 'Meganet-C2',
+                                    type: 'directory',
+                                    children: {
+                                        'README.md': {
+                                            name: 'README.md',
+                                            type: 'file',
+                                            content: `
+Meganet C2 är ett enkelt Command & Control-ramverk med en reverse shell-klient. Jag byggde det för att förstå hur
+malware fungerar, utforska hur remote access-verktyg skapas och utmana mig själv som programmerare.
+
+Programmet är skrivet i Python och består av två delar: en server som hanterar inkommande sessioner och en klient
+som ansluter tillbaka till servern och exekverar kommandon. Finns att se via länken till min github.
+
+Byggt av mig i mars 2026 — https://github.com/Jonsson132123/Meganet-C2-Server-and-client-software
+
+`,
+                                        },
+                                        'server.py': {
+                                            name: 'server.py',
+                                            type: 'file',
+                                            content: 'https://github.com/Jonsson132123/Meganet-C2-Server-and-client-software',
+                                        },
+                                        'reverse_shell.py': {
+                                            name: 'reverse_shell.py',
+                                            type: 'file',
+                                            content: 'https://github.com/Jonsson132123/Meganet-C2-Server-and-client-software',
                                         },
                                     }
                                 }
                             }
-                        },
-                        'skills': {
-                            name: 'skills',
-                            type: 'directory',
-                            children: {}
                         },
                         'john': {
                             name: 'john',
